@@ -1,0 +1,70 @@
+/* portofolio/src/components/SectionHeader/SectionHeader.module.css */
+.headerContainer {
+  text-align: center;
+  margin-bottom: 3.125rem; /* Menggunakan rem (50px) */
+  padding-top: 3.125rem; /* Memberi jarak ke atas dari awal section */
+}
+
+.title {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+.underline {
+  width: 60px; 
+  height: 3px;
+  background-color: #007bff; 
+  margin: 0 auto 1.25rem auto; /* 20px */
+}
+
+.subtitle {
+  font-size: 1.1rem; /* 17.6px */
+  color: #555;
+  max-width: 600px; 
+  margin: 0 auto;
+}
+
+/* Responsivitas SectionHeader */
+@media (max-width: 1024px) {
+  .headerContainer {
+    margin-bottom: 2.5rem; /* 40px */
+    padding-top: 2.5rem; /* 40px */
+  }
+  .title {
+    font-size: 2.2rem; /* 35.2px */
+  }
+  .subtitle {
+    font-size: 1rem; /* 16px */
+    padding: 0 1.25rem; /* 20px */
+  }
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
+    margin-bottom: 2rem; /* 32px */
+    padding-top: 2rem; /* 32px */
+  }
+  .title {
+    font-size: 1.8rem; /* 28.8px */
+  }
+  .underline {
+    width: 40px;
+    margin-bottom: 1rem; /* 16px */
+  }
+  .subtitle {
+    font-size: 0.9rem; /* 14.4px */
+    padding: 0 1rem; /* 16px */
+  }
+}
+
+@media (max-width: 480px) {
+  .headerContainer {
+    margin-bottom: 1.5rem; /* 24px */
+    padding-top: 1.5rem; /* 24px */
+  }
+  .title {
+    font-size: 1.5rem; /* 24px */
+  }
+}

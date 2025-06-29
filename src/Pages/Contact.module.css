@@ -1,0 +1,188 @@
+/* portofolio/src/pages/Contact.module.css */
+.contactPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../assets/home-background.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 5rem 6.25rem; /* 80px 100px */
+  z-index: 1; 
+  position: relative;
+}
+
+.contactSection {
+  display: flex;
+  gap: 5rem; /* 80px */
+  margin-top: 3.125rem; /* 50px */
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.formColumn {
+  flex: 1;
+  min-width: 350px; 
+  background-color: #ffffff;
+  padding: 1.875rem; /* 30px */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  background-color: #ffffff;
+  padding: 2.5rem 6.25rem 1.25rem 6.25rem; /* 40px 100px 20px 100px */
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.footerContentWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1000px; 
+  gap: 5rem; /* 80px */
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+  margin-bottom: 1.25rem; /* 20px */
+  align-items: flex-start; 
+  padding-bottom: 1.25rem; /* 20px */
+  border-bottom: 1px solid #e0e0e0; 
+}
+
+.hireMe,
+.information {
+  flex: 1; 
+  min-width: 280px; 
+  text-align: left; 
+}
+
+.hireMe h3,
+.information h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.9375rem; /* 15px */
+}
+
+.hireMe p,
+.information p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+.socialLinks {
+  display: flex;
+  gap: 0.9375rem; /* 15px */
+  margin-top: 0.625rem; /* 10px */
+}
+
+.socialLinks a {
+  color: #007bff; 
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: #0056b3;
+}
+
+.copyrightText {
+  color: #777;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%; 
+  padding-top: 0.625rem; /* 10px */
+}
+
+/* Responsivitas Contact Page */
+@media (max-width: 1024px) {
+  .mainContent {
+    padding: 3.75rem 3.125rem; /* 60px 50px */
+  }
+  .contactSection {
+    gap: 2.5rem; /* 40px */
+  }
+  .formColumn {
+    min-width: unset; 
+    flex: 1 1 100%; 
+  }
+  .footer {
+    padding: 1.875rem 3.125rem 0.9375rem 3.125rem; /* 30px 50px 15px 50px */
+  }
+  .footerContentWrapper {
+    gap: 2.5rem; /* 40px */
+    justify-content: center; 
+    text-align: center; 
+  }
+  .socialLinks {
+    justify-content: center; 
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 2.5rem 1.25rem; /* 40px 20px */
+  }
+  .contactSection {
+    flex-direction: column;
+    gap: 1.875rem; /* 30px */
+  }
+  .formColumn {
+    padding: 1.5625rem; /* 25px */
+  }
+  .footer {
+    padding: 1.5625rem 1.25rem 0.625rem 1.25rem; /* 25px 20px 10px 20px */
+  }
+  .footerContentWrapper {
+    flex-direction: column;
+    gap: 1.875rem; /* 30px */
+    align-items: center; /* Pusatkan di mobile */
+  }
+  .hireMe,
+  .information {
+    text-align: center; /* Pusatkan teks di mobile */
+    min-width: unset; /* Izinkan mengecil di mobile */
+  }
+  .socialLinks {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 1.5rem 0.625rem; /* 24px 10px */
+  }
+  .formColumn {
+    padding: 1.25rem; /* 20px */
+  }
+  .hireMe h3,
+  .information h3 {
+    font-size: 1.3rem;
+  }
+  .hireMe p,
+  .information p,
+  .copyrightText {
+    font-size: 0.8rem;
+  }
+}

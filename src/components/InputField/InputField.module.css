@@ -1,0 +1,50 @@
+/* portofolio/src/components/InputField/InputField.module.css */
+.inputGroup {
+  margin-bottom: 1.25rem; /* 20px */
+  width: 100%;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem; /* 8px */
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 0.9375rem; /* 12px 15px */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; 
+  font-size: 1rem; 
+  color: #333;
+  background-color: #f8faff; 
+  outline: none; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input::placeholder {
+  color: #a0a0a0;
+}
+
+.input:focus {
+  border-color: #007bff; 
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); 
+}
+
+.textArea {
+  resize: vertical; 
+  min-height: 7.5rem; /* 120px */
+}
+
+/* Responsivitas InputField */
+@media (max-width: 768px) {
+  .label {
+    font-size: 0.85rem;
+  }
+  .input {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+}

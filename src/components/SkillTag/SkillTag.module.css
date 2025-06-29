@@ -1,0 +1,25 @@
+/* portofolio/src/components/SkillTag/SkillTag.module.css */
+.skillTag {
+  display: inline-block;
+  background-color: #e0e0e0; 
+  color: #555;
+  padding: 0.5rem 0.9375rem; /* 8px 15px */
+  border-radius: 5px;
+  font-size: 0.9rem; /* 14.4px */
+  font-weight: 500;
+  margin: 0.3125rem; /* 5px */
+  white-space: nowrap; 
+}
+
+.skillTag:hover {
+  background-color: #d0d0d0; 
+}
+
+/* Responsivitas SkillTag */
+@media (max-width: 768px) {
+  .skillTag {
+    font-size: 0.8rem; /* 12.8px */
+    padding: 0.4rem 0.8rem;
+    margin: 0.2rem;
+  }
+}

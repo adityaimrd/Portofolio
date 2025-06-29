@@ -1,0 +1,114 @@
+/* portofolio/src/components/ProjectCard/ProjectCard.module.css */
+.card {
+  display: flex;
+  border-radius: 10px;
+  margin-bottom: 4.5rem; /* 40px */
+  overflow: hidden;
+  max-width: 1500px; 
+  width: 100%; 
+  align-items: center; 
+}
+
+.imageContainer {
+  flex: 0 0 60%; 
+  padding: 1.50rem; /* 20px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; 
+}
+
+.projectImage {
+  max-width: 90%; 
+  height: auto;
+  display: block;
+}
+
+.content {
+  flex: 1; 
+  padding: 1.875rem; /* 30px */
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* 8px */
+  margin-bottom: 1.5625rem; /* 25px */
+}
+
+.links {
+  display: flex;
+  gap: 0.9375rem; /* 15px */
+  align-items: center; 
+}
+
+.caseStudyLink {
+  text-decoration: none; 
+}
+
+/* Responsivitas untuk ProjectCard */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; 
+    margin-bottom: 2rem; /* 32px */
+  }
+  .imageContainer {
+    flex: 1 1 100%;
+    padding: 1rem; /* 16px */
+  }
+  .projectImage {
+    max-width: 80%; 
+  }
+  .content {
+    padding: 1.25rem; /* 20px */
+    text-align: center;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .description {
+    font-size: 0.95rem;
+  }
+  .techStack {
+    justify-content: center;
+  }
+  .links {
+    flex-direction: column; 
+    align-items: center;
+    width: 100%;
+    gap: 0.8rem; /* 12.8px */
+  }
+  .links a {
+    width: 100%; /* Tombol memenuhi lebar di mobile */
+    max-width: 250px; /* Batasi lebar maksimum tombol di mobile */
+  }
+  .links a .button {
+    width: 100%; /* Pastikan tombol di dalam link juga 100% */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.4rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  .imageContainer {
+    padding: 0.75rem; /* 12px */
+  }
+}

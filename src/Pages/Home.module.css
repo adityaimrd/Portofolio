@@ -1,0 +1,73 @@
+/* portofolio/src/pages/Home.module.css */
+.homePage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../assets/home-background.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px; 
+  position: relative;
+  z-index: 1; 
+}
+
+.heroSection h1 {
+  font-size: 3.5rem; /* 56px */
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.25rem; /* 20px */
+  max-width: 800px;
+}
+
+.heroSection p {
+  font-size: 1.2rem; /* 19.2px */
+  color: #555;
+  margin-bottom: 2.5rem; /* 40px */
+  max-width: 700px;
+}
+
+/* Responsivitas Home Page */
+@media (max-width: 1024px) {
+  .heroSection {
+    padding: 0 30px;
+  }
+  .heroSection h1 {
+    font-size: 3rem; /* 48px */
+  }
+  .heroSection p {
+    font-size: 1.1rem; /* 17.6px */
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection h1 {
+    font-size: 2.5rem; /* 40px */
+    margin-bottom: 1rem;
+  }
+  .heroSection p {
+    font-size: 1rem; /* 16px */
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection h1 {
+    font-size: 2rem; /* 32px */
+  }
+  .heroSection p {
+    font-size: 0.9rem; /* 14.4px */
+    padding: 0 15px; /* Sesuaikan padding teks paragraf */
+  }
+}

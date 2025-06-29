@@ -1,0 +1,124 @@
+/* portofolio/src/pages/About.module.css */
+.aboutPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f5fa; 
+  position: relative;
+  overflow: hidden;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 5rem 6.25rem; /* Menggunakan rem (80px 100px) */
+  z-index: 1; 
+  position: relative;
+}
+
+.aboutSection {
+  display: flex;
+  gap: 5rem; /* Menggunakan rem (80px) */
+  margin-top: 3.125rem; /* 50px */
+  max-width: 1000px; 
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center; 
+  flex-wrap: wrap; 
+  align-items: flex-start;
+}
+
+.skillsColumn,
+.bioColumn {
+  flex: 1;
+  min-width: 300px; 
+  background-color: transparent; 
+  box-shadow: none; 
+  padding: 0rem 0.9375rem; /* 0px 15px */
+  border-radius: 10px; 
+}
+
+.skillsColumn h3,
+.bioColumn h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem; /* 10px */
+}
+
+.bioColumn p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 0.9375rem; /* 15px */
+  text-align: justify; 
+}
+
+.bioColumn p:last-of-type {
+  margin-bottom: 1.875rem; /* 30px */
+}
+
+.socialLink {
+  color: #007bff; 
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.socialLink:hover {
+  color: #0056b3;
+}
+
+/* Responsivitas About Page */
+@media (max-width: 1024px) {
+  .mainContent {
+    padding: 3.75rem 3.125rem; /* 60px 50px */
+  }
+  .aboutSection {
+    gap: 2.5rem; /* 40px */
+  }
+  .skillsColumn h3,
+  .bioColumn h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 2.5rem 1.25rem; /* 40px 20px */
+  }
+  .aboutSection {
+    flex-direction: column;
+    gap: 1.875rem; /* 30px */
+  }
+  .skillsColumn,
+  .bioColumn {
+    padding: 0rem 0.625rem; /* 0px 10px */
+    min-width: unset; /* Hapus min-width agar flex bisa bekerja lebih baik */
+    flex: 1 1 100%; /* Menjadi satu kolom penuh */
+  }
+  .skillsColumn h3,
+  .bioColumn h3 {
+    text-align: center;
+  }
+  .bioColumn p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 1.5rem 0.625rem; /* 24px 10px */
+  }
+  .skillsColumn h3,
+  .bioColumn h3 {
+    font-size: 1.4rem;
+  }
+  .bioColumn p {
+    font-size: 0.9rem;
+  }
+}
