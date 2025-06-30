@@ -43,7 +43,7 @@ const Contact = () => {
 
       setSubmissionStatus('success');
       setNotificationMessage('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' }); // Kosongkan form
+      setFormData({ name: '', email: '', message: '' }); // Kosongkan formm
 
     } catch (error) {
       console.error('Error submitting form:', error);
