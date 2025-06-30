@@ -34,7 +34,7 @@ const Contact = () => {
     const params = new URLSearchParams(data);
 
     try {
-      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
         method: 'POST',
         body: params, 
         headers: { 
