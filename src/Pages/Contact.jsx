@@ -1,16 +1,64 @@
 // portofolio/src/pages/Contact.jsx
-import React from 'react';
+import React, { useState } from 'react'; // Import useState
 import SectionHeader from '../components/SectionHeader/SectionHeader';
 import InputField from '../components/InputField/InputField';
 import Button from '../components/Button/Button';
 import styles from './Contact.module.css';
 
-// Gambar background dari Home Page
 import homeBackgroundImage from '../assets/home-background.png'; 
 
 const Contact = () => {
+  // State untuk mengelola notifikasi dan status
+  const [submissionStatus, setSubmissionStatus] = useState(null); 
+  const [notificationMessage, setNotificationMessage] = useState('');
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' }); // State untuk input form
+
+  const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyOz8GDKyI6sWIHetNFHCO2ZVZIn5Eg2f42dXQYsI26igypPpKVBDvj8yeYzoosYGcb7w/exec"; 
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Mencegah redirect halaman
+
+    setSubmissionStatus('sending');
+    setNotificationMessage('Sending message...');
+
+    // Membuat objek FormData dari form untuk memudahkan pengambilan data
+    const formElement = event.target;
+    const data = new FormData(formElement);
+    
+    // Mengubah FormData menjadi URL-encoded string
+    const params = new URLSearchParams(data);
+
+    try {
+      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: params, 
+        redirect: 'follow', // Pastikan fetch mengikuti redirect Apps Script jika ada
+        mode: 'no-cors' // Penting untuk Apps Script karena respons aslinya adalah CORS
+      });
+
+      setSubmissionStatus('success');
+      setNotificationMessage('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' }); // Kosongkan form
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmissionStatus('error');
+      setNotificationMessage('Failed to send message. Please try again.');
+    } finally {
+      setTimeout(() => {
+        setSubmissionStatus(null);
+        setNotificationMessage('');
+      }, 5000); // Notifikasi akan hilang setelah 5 detik
+    }
+  };
+
   return (
-    <div id="contact" className={styles.contactPage} style={{ backgroundImage: `url(${homeBackgroundImage})` }}>
+    <div id="contact" className={styles.contactPage} style={{ backgroundImage: `url(${homeBackgroundImage})` }}> 
       <main className={styles.mainContent}>
         <SectionHeader 
           title="CONTACTS" 
@@ -19,15 +67,24 @@ const Contact = () => {
 
         <section className={styles.contactSection}>
           <div className={styles.formColumn}>
-            {/* menyambungkan ke spreadsheet */}
-            <form name="contact" method="POST" action="https://script.google.com/macros/s/AKfycbyOz8GDKyI6sWIHetNFHCO2ZVZIn5Eg2f42dXQYsI26igypPpKVBDvj8yeYzoosYGcb7w/exec" className={styles.contactForm}>
-
-              <InputField label="Name" type="text" name="name" placeholder="Enter Your Name" />
-              <InputField label="Email" type="email" name="email" placeholder="Enter Your Email" />
-              <InputField label="Message" isTextArea={true} name="message" placeholder="Enter Your Message" />
+            {/* Tambahkan onSubmit handler */}
+            <form name="contact" onSubmit={handleSubmit} className={styles.contactForm}>
               
-              <Button type="submit">SUBMIT</Button>
+              <InputField label="Name" type="text" name="name" placeholder="Enter Your Name" value={formData.name} onChange={handleChange} />
+              <InputField label="Email" type="email" name="email" placeholder="Enter Your Email" value={formData.email} onChange={handleChange} />
+              <InputField label="Message" isTextArea={true} name="message" placeholder="Enter Your Message" value={formData.message} onChange={handleChange} />
+              
+              <Button type="submit" disabled={submissionStatus === 'sending'}>
+                {submissionStatus === 'sending' ? 'SENDING...' : 'SUBMIT'}
+              </Button>
             </form>
+
+            {/* Area Notifikasi */}
+            {notificationMessage && (
+              <div className={`${styles.notification} ${styles[submissionStatus]}`}>
+                {notificationMessage}
+              </div>
+            )}
           </div>
         </section>
       </main>
@@ -52,7 +109,6 @@ const Contact = () => {
             <p>City : Sukoharjo</p>
           </div>
         </div>
-        {/* Copyright notice tetap di dalam footer, di bawah wrapper content */}
         <p className={styles.copyrightText}>© Copyright 2025. Made by Aditya Imam Ramadhan</p>
       </footer>
     </div>
