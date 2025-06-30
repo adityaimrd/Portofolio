@@ -9,7 +9,7 @@ const InputField = ({ label, type, name, placeholder, isTextArea = false, rows =
       {isTextArea ? (
         <textarea
           id={name}
-          name={name} // Penting untuk Netlify Forms
+          name={name} 
           placeholder={placeholder}
           className={`${styles.input} ${styles.textArea}`}
           rows={rows}
@@ -18,7 +18,7 @@ const InputField = ({ label, type, name, placeholder, isTextArea = false, rows =
         <input
           type={type}
           id={name}
-          name={name} // Penting untuk Netlify Forms
+          name={name} 
           placeholder={placeholder}
           className={styles.input}
         />

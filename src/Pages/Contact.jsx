@@ -37,6 +37,9 @@ const Contact = () => {
       const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
         method: 'POST',
         body: params, 
+        headers: { 
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
         redirect: 'follow', // Pastikan fetch mengikuti redirect Apps Script jika ada
         mode: 'no-cors' // Penting untuk Apps Script karena respons aslinya adalah CORS
       });
