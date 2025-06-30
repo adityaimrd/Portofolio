@@ -20,7 +20,7 @@ const Contact = () => {
         <section className={styles.contactSection}>
           <div className={styles.formColumn}>
             {/* menyambungkan ke spreadsheet */}
-            <form name="contact" method="POST" action="[https://script.google.com/macros/s/AKfycbyOz8GDKyI6sWIHetNFHCO2ZVZIn5Eg2f42dXQYsI26igypPpKVBDvj8yeYzoosYGcb7w/exec]" className={styles.contactForm}>
+            <form name="contact" method="POST" action="https://script.google.com/macros/s/AKfycbyOz8GDKyI6sWIHetNFHCO2ZVZIn5Eg2f42dXQYsI26igypPpKVBDvj8yeYzoosYGcb7w/exec" className={styles.contactForm}>
 
               <InputField label="Name" type="text" name="name" placeholder="Enter Your Name" />
               <InputField label="Email" type="email" name="email" placeholder="Enter Your Email" />
