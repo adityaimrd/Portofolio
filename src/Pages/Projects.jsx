@@ -1,10 +1,8 @@
-// portofolio/src/pages/Projects.jsx
 import React from 'react';
 import SectionHeader from '../components/SectionHeader/SectionHeader';
 import ProjectCard from '../components/ProjectCard/ProjectCard';
 import styles from './Projects.module.css';
 
-// ambil gambar di folder src/assets
 import porto1Image from '../assets/porto1.png'; 
 import porto2Image from '../assets/porto2.png'; 
 import porto3Image from '../assets/porto3.png'; 
@@ -13,7 +11,7 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      imageSrc: porto1Image, // Menggunakan gambar yang sama untuk semua, sesuai permintaan
+      imageSrc: porto1Image, 
       title: 'Cerita Kita',
       description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
       techStack: ['HTML', 'CSS', 'JavaScript', 'Tailwind'],
@@ -25,15 +23,15 @@ const Projects = () => {
       title: 'APP Story',
       description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
       techStack: ['HTML', 'CSS', 'JavaScript'],
-      liveLink: 'https://storypa.netlify.app/' // Ganti dengan link asli Anda
+      liveLink: 'https://storypa.netlify.app/' 
     },
     {
       id: 3,
       imageSrc: porto3Image,
       title: 'Eduwise',
       description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-      techStack: ['HTML', 'CSS', 'JavaScript', 'Vue'],
-      liveLink: 'https://eduwise-ten.vercel.app/' // Ganti dengan link asli Anda
+      techStack: ['HTML', 'CSS', 'JavaScript', 'Vue', 'Python'],
+      liveLink: 'https://eduwise-ten.vercel.app/' 
     }
   ];
 

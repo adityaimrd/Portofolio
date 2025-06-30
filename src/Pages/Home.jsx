@@ -9,7 +9,7 @@ const Home = () => {
     <div id="home" className={styles.homePage}>
       <div className={styles.heroSection}>
         <h1>HEY, I'M ADITYA IMAM RAMADHAN</h1>
-        <p>A Result-Oriented Web Developer building and managing Websites and Web Applications that leads to the success of the overall product</p>
+        <p>Transforming Concepts to Code & Design: Creating Impactful Digital Products with Software Engineering Expertise and Innovative UI/UX</p>
         <Button href="#projects">
           PROJECTS
         </Button>
