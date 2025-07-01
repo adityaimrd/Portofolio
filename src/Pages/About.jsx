@@ -12,8 +12,6 @@ const About = () => {
 
   return (
     <div id="about" className={styles.aboutPage}>
-      {/* Navbar diimpor di App.js atau komponen layout utama, tidak perlu di setiap halaman */}
-      {/* <Navbar /> */} 
 
       <main className={styles.mainContent}>
         <SectionHeader 
