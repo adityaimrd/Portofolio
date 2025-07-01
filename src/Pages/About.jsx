@@ -1,14 +1,24 @@
 // portofolio/src/pages/About.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import SectionHeader from '../components/SectionHeader/SectionHeader';
 import SkillTag from '../components/SkillTag/SkillTag';
-import Button from '../components/Button/Button'; // Import Button
+import Button from '../components/Button/Button'; 
 import styles from './About.module.css';
 
+import techIcon from '../assets/tech-icon.png';      
+import softwareIcon from '../assets/software-icon.png'; 
+import languageIcon from '../assets/language-icon.png';
+
 const About = () => {
-  const skills = [
-    'HTML', 'CSS', 'JavaScript', 'GIT', 'Figma', 'Github', 'React', 'CorelDraw', 'Vue', 'Tailwind'
-  ];
+  // melacak kategori skill yang aktif (default: 'Tech')
+  const [activeSkillCategory, setActiveSkillCategory] = useState('Tech');
+
+  // Data skills 
+  const skillCategories = {
+    Tech: ['HTML', 'CSS', 'JavaScript', 'GIT', 'Github', 'React', 'VueJs', 'Tailwind'],
+    Software: ['Visual Studio Code', 'Figma', 'Microsoft Excel', 'Microsoft Word', 'CorelDraw', 'Adobe Premiere', 'Adobe Photoshop'],
+    Language: ['English', 'Indonesia']
+  };
 
   return (
     <div id="about" className={styles.aboutPage}>
@@ -22,10 +32,57 @@ const About = () => {
         <section className={styles.aboutSection}>
           <div className={styles.skillsColumn}>
             <h3>My Skills</h3>
-            <div className={styles.skillsContainer}>
-              {skills.map((skill, index) => (
-                <SkillTag key={index}>{skill}</SkillTag>
-              ))}
+            {/* Navigasi Tab Skills */}
+            <div className={styles.skillTabs}>
+              <div 
+                className={`${styles.skillTabButton} ${activeSkillCategory === 'Tech' ? styles.active : ''}`}
+                onClick={() => setActiveSkillCategory('Tech')}
+              >
+
+                
+                <img src={techIcon} alt="Tech Icon" className={styles.skillTabIcon} /> Tech 
+              </div>
+              <div 
+                className={`${styles.skillTabButton} ${activeSkillCategory === 'Software' ? styles.active : ''}`}
+                onClick={() => setActiveSkillCategory('Software')}
+              >
+
+                
+                <img src={softwareIcon} alt="Software Icon" className={styles.skillTabIcon} /> Software
+              </div>
+              <div 
+                className={`${styles.skillTabButton} ${activeSkillCategory === 'Language' ? styles.active : ''}`}
+                onClick={() => setActiveSkillCategory('Language')}
+              >
+                
+                
+                <img src={languageIcon} alt="Language Icon" className={styles.skillTabIcon} /> Language
+              </div>
+              <div className={styles.tabUnderline}></div> {/* Garis bawah */}
+            </div>
+
+            <div className={styles.skillsContent}>
+              {activeSkillCategory === 'Tech' && (
+                <div className={styles.skillsGrid}>
+                  {skillCategories.Tech.map((skill, index) => (
+                    <SkillTag key={index}>{skill}</SkillTag>
+                  ))}
+                </div>
+              )}
+              {activeSkillCategory === 'Software' && (
+                <div className={styles.skillsGrid}>
+                  {skillCategories.Software.map((skill, index) => (
+                    <SkillTag key={index}>{skill}</SkillTag>
+                  ))}
+                </div>
+              )}
+              {activeSkillCategory === 'Language' && (
+                <div className={styles.skillsGrid}>
+                  {skillCategories.Language.map((skill, index) => (
+                    <SkillTag key={index}>{skill}</SkillTag>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 

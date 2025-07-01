@@ -37,30 +37,98 @@
   border-radius: 10px; 
 }
 
-.skillsColumn h3,
+.skillsColumn h3 { /* Pastikan ini menargetkan h3 di skillsColumn */
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.25rem; 
+  text-align: left; /* Sesuaikan agar rata kiri */
+}
+
+
+
+.skillTabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0; /* Garis bawah semua tab */
+  margin-bottom: 1.5rem; /* Jarak antara tab dan konten skill */
+  position: relative;
+  width: 100%;
+}
+
+.skillTabButton {
+  padding: 0.75rem 1.25rem; /* 12px 20px */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #777;
+  transition: color 0.3s ease;
+  position: relative;
+  flex-grow: 1; 
+  text-align: center;
+  white-space: nowrap;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.skillTabIcon {
+  width: 20px; 
+  height: 20px;
+  margin-right: 8px; 
+}
+
+.skillTabButton:hover {
+  color: #333;
+}
+
+.skillTabButton.active {
+  color: #333; 
+}
+
+.tabUnderline {
+  position: absolute;
+  bottom: -1px; 
+  left: 0;
+  height: 3px;
+  background-color: #007bff; 
+  width: calc(100% / 3); 
+  transition: transform 0.3s ease;
+}
+
+.skillTabButton:nth-child(1).active ~ .tabUnderline { transform: translateX(0%); }
+.skillTabButton:nth-child(2).active ~ .tabUnderline { transform: translateX(100%); }
+.skillTabButton:nth-child(3).active ~ .tabUnderline { transform: translateX(200%); }
+
+.skillsContent {
+  padding-top: 0.5rem; 
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem; /* 10px */
+  justify-content: flex-start; 
+}
+
+
 .bioColumn h3 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 1.25rem; /* 20px */
-}
-
-.skillsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.625rem; /* 10px */
+  margin-bottom: 1.25rem; 
+  text-align: left; 
 }
 
 .bioColumn p {
   font-size: 1rem;
   line-height: 1.7;
   color: #555;
-  margin-bottom: 0.9375rem; /* 15px */
+  margin-bottom: 0.9375rem; 
   text-align: justify; 
 }
 
 .bioColumn p:last-of-type {
-  margin-bottom: 1.875rem; /* 30px */
+  margin-bottom: 1.875rem; 
 }
 
 .socialLink {
@@ -85,6 +153,11 @@
   .bioColumn h3 {
     font-size: 1.6rem;
   }
+  .skillTabIcon {
+    width: 18px; 
+    height: 18px;
+    margin-right: 6px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -98,8 +171,8 @@
   .skillsColumn,
   .bioColumn {
     padding: 0rem 0.625rem; /* 0px 10px */
-    min-width: unset; /* Hapus min-width agar flex bisa bekerja lebih baik */
-    flex: 1 1 100%; /* Menjadi satu kolom penuh */
+    min-width: unset; 
+    flex: 1 1 100%; 
   }
   .skillsColumn h3,
   .bioColumn h3 {
@@ -107,6 +180,21 @@
   }
   .bioColumn p {
     font-size: 0.95rem;
+  }
+  .skillTabs {
+    justify-content: center; 
+  }
+  .skillsGrid {
+    justify-content: center; 
+  }
+  .skillTabButton {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+  .skillTabIcon {
+    width: 16px; 
+    height: 16px;
+    margin-right: 5px;
   }
 }
 
@@ -120,5 +208,14 @@
   }
   .bioColumn p {
     font-size: 0.9rem;
+  }
+  .skillTabButton {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.6rem;
+  }
+  .skillTabIcon {
+    width: 14px; 
+    height: 14px;
+    margin-right: 4px;
   }
 }

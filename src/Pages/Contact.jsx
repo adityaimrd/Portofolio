@@ -109,7 +109,7 @@ const Contact = () => {
             <p>Name : Aditya Imam Ramadhan</p>
             <p>Date of birth : 27.10.2003</p>
             <p>Email : adtyimrd27@gmail.com</p>
-            <p>City : Sukoharjo</p>
+            <p>City : Sukoharjo, Indonesia</p>
           </div>
         </div>
         <p className={styles.copyrightText}>© Copyright 2025. Made by Aditya Imam Ramadhan</p>
