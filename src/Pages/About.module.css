@@ -10,15 +10,15 @@
 
 .mainContent {
   flex-grow: 1;
-  padding: 5rem 6.25rem; /* Menggunakan rem (80px 100px) */
+  padding: 5rem 6.25rem; 
   z-index: 1; 
   position: relative;
 }
 
 .aboutSection {
   display: flex;
-  gap: 5rem; /* Menggunakan rem (80px) */
-  margin-top: 3.125rem; /* 50px */
+  gap: 5rem; 
+  margin-top: 3.125rem; 
   max-width: 1000px; 
   margin-left: auto;
   margin-right: auto;
@@ -33,30 +33,28 @@
   min-width: 300px; 
   background-color: transparent; 
   box-shadow: none; 
-  padding: 0rem 0.9375rem; /* 0px 15px */
+  padding: 0; /* Ubah padding menjadi 0 di sini untuk desktop juga agar konsisten */
   border-radius: 10px; 
 }
 
-.skillsColumn h3 { /* Pastikan ini menargetkan h3 di skillsColumn */
+.skillsColumn h3 { 
   font-size: 1.8rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 1.25rem; 
-  text-align: left; /* Sesuaikan agar rata kiri */
+  text-align: left; 
 }
-
-
 
 .skillTabs {
   display: flex;
-  border-bottom: 1px solid #e0e0e0; /* Garis bawah semua tab */
-  margin-bottom: 1.5rem; /* Jarak antara tab dan konten skill */
+  border-bottom: 1px solid #e0e0e0; 
+  margin-bottom: 1.5rem; 
   position: relative;
   width: 100%;
 }
 
 .skillTabButton {
-  padding: 0.75rem 1.25rem; /* 12px 20px */
+  padding: 0.75rem 1.25rem; 
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
@@ -65,7 +63,7 @@
   position: relative;
   flex-grow: 1; 
   text-align: center;
-  white-space: nowrap;
+  white-space: nowrap; 
   display: flex; 
   align-items: center; 
   justify-content: center; 
@@ -75,6 +73,7 @@
   width: 20px; 
   height: 20px;
   margin-right: 8px; 
+  object-fit: contain; 
 }
 
 .skillTabButton:hover {
@@ -101,17 +100,17 @@
 
 .skillsContent {
   padding-top: 0.5rem; 
-  width: 100%;
+  width: 100%; 
 }
 
 .skillsGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.625rem; /* 10px */
+  gap: 0.625rem; 
   justify-content: flex-start; 
   width: 100%; 
+  margin: 0; 
 }
-
 
 .bioColumn h3 {
   font-size: 1.8rem;
@@ -146,14 +145,18 @@
 /* Responsivitas About Page */
 @media (max-width: 1024px) {
   .mainContent {
-    padding: 3.75rem 3.125rem; /* 60px 50px */
+    padding: 3.75rem 3.125rem; 
   }
   .aboutSection {
-    gap: 2.5rem; /* 40px */
+    gap: 2.5rem; 
   }
   .skillsColumn h3,
   .bioColumn h3 {
     font-size: 1.6rem;
+  }
+  .skillTabButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
   }
   .skillTabIcon {
     width: 18px; 
@@ -164,36 +167,36 @@
 
 @media (max-width: 768px) {
   .mainContent {
-    padding: 2.5rem 1.25rem; /* 40px 20px */
+    padding: 2.5rem 1.25rem; 
   }
   .aboutSection {
     flex-direction: column;
-    gap: 1.875rem; /* 30px */
+    gap: 1.875rem; 
   }
   .skillsColumn,
   .bioColumn {
-    padding: 0rem 0.625rem; /* 0px 10px */
+    padding: 0; 
     min-width: unset; 
     flex: 1 1 100%; 
   }
+  
   .skillsColumn { 
     display: flex;
     flex-direction: column;
     align-items: center; 
-    text-align: center;
+    text-align: center; 
   }
+
   .skillsColumn h3,
   .bioColumn h3 {
-    text-align: center;
+    text-align: center; 
   }
   .bioColumn p {
     font-size: 0.95rem;
   }
-  /*.skillTabs {
-     justify-content: center; 
-  }*/
   .skillsGrid {
     justify-content: center; 
+    margin: 0 auto; 
   }
   .skillTabButton {
     font-size: 0.8rem;
@@ -208,7 +211,7 @@
 
 @media (max-width: 480px) {
   .mainContent {
-    padding: 1.5rem 0.625rem; /* 24px 10px */
+    padding: 1.5rem 0.625rem; 
   }
   .skillsColumn h3,
   .bioColumn h3 {
