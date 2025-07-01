@@ -186,9 +186,9 @@
   .bioColumn p {
     font-size: 0.95rem;
   }
-  .skillTabs {
-    /* justify-content: center; */
-  }
+  /*.skillTabs {
+     justify-content: center; 
+  }*/
   .skillsGrid {
     justify-content: center; 
   }
